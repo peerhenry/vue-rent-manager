@@ -12,20 +12,24 @@
     <b-row>
       <b-col>
         <b-button :variant="'primary'" @click="createVehicle" class="mb-3">Register new vehicle</b-button>
-
-        <b-list-group class="mb-3">
-          <b-list-group-item v-for="v in vehicles" @click.self="viewVehicle(v.id)" class="vehicle-list-item">
-            <span>
-              Name: {{v.name}}, Type: {{v.type}}, Model: {{v.model}}
-            </span>
-
-            <b-button :variant="'primary'" class="vehicle-item-btn" @click="editVehicle($event, v.id)">
-              <font-awesome-icon icon="edit" />
-            </b-button>
-            
-          </b-list-group-item>
-        </b-list-group>
       </b-col>
+    </b-row>
+
+    <b-row>
+      <b-card-group columns>
+        <b-card 
+          v-for="v in vehicles"
+          @click="viewVehicle(v.id)"
+          class="vehicle-card"
+          img-src="https://auto.ndtvimg.com/car-images/medium/maruti-suzuki/baleno/maruti-suzuki-baleno.jpg?v=51"
+          :title="v.name"
+          >
+          <p>Type: {{v.type}}, Model: {{v.model}}</p>
+          <b-button :variant="'primary'" class="vehicle-item-btn" @click="editVehicle($event, v.id)">
+            <font-awesome-icon icon="edit" />
+          </b-button>
+        </b-card>
+      </b-card-group>
     </b-row>
 
   </b-container>
@@ -63,7 +67,7 @@
 </script>
 
 <style scoped lang="scss">
-.vehicle-list-item{
+.vehicle-card {
   cursor: pointer;
   &:hover {
     background-color: #eee;
@@ -71,6 +75,7 @@
 }
 
 .vehicle-item-btn{
-  float: right
+  border-radius: 50%;
+  float: right;
 }
 </style>
