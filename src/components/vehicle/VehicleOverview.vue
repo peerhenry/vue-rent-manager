@@ -11,12 +11,20 @@
 
     <b-row>
       <b-col>
-        <b-list-group>
-          <b-list-group-item v-for="v in vehicles" @click="viewVehicle(v.id)" class="vehicle-list-item">
-            Name: {{v.name}}, Type: {{v.type}}, Model: {{v.model}}
+        <b-button :variant="'primary'" @click="createVehicle" class="mb-3">Register new vehicle</b-button>
+
+        <b-list-group class="mb-3">
+          <b-list-group-item v-for="v in vehicles" @click.self="viewVehicle(v.id)" class="vehicle-list-item">
+            <span>
+              Name: {{v.name}}, Type: {{v.type}}, Model: {{v.model}}
+            </span>
+
+            <b-button :variant="'primary'" class="vehicle-item-btn" @click="editVehicle($event, v.id)">
+              <font-awesome-icon icon="edit" />
+            </b-button>
+            
           </b-list-group-item>
         </b-list-group>
-        <b-button :variant="'primary'" @click="createVehicle">New vehicle</b-button>
       </b-col>
     </b-row>
 
@@ -40,7 +48,10 @@
         this.$store.commit('addRandomVehicle') // DEBUG
       },
       viewVehicle: function(id) {
-        console.log('Got to view vehicle, ', id)
+        console.log('Go to view vehicle, ', id)
+      },
+      editVehicle: function(event, id) {
+        console.log('Go to edit vehicle, ', id)
       }
     },
     computed: {
@@ -57,5 +68,9 @@
   &:hover {
     background-color: #eee;
   }
+}
+
+.vehicle-item-btn{
+  float: right
 }
 </style>

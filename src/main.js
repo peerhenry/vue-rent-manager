@@ -5,6 +5,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
 import router from './router.js'
 import store from './store.js'
+import setupIcons from './setupIcons.js'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+setupIcons()
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

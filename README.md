@@ -37,7 +37,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 The goal of this SPA is to create a webapp with which vehicles can be registered by admins and rented out to customers.
 
-Functionality
+#### Functionality
 
 - (Admin) Homepage (todo: content)
 - (Admin) Register a vehicle
@@ -52,17 +52,17 @@ Functionality
 - (User) Register a reservation (start date & end date)
 - (User) Cancel a reservation
 
-Pages/routes
+#### Pages/routes
 
-/vehicles
-/vehicle/<id>
-/vehicle/new
-/vehicle/edit/<id>
-/reservations
-/reservation/<id>
-/reservation/new
-/reservation/edit/<id>
-/rentals
-/rental/<id>
-/rental/new
-/rental/edit/<id>
+- /vehicles
+- /vehicle/<id>
+- /vehicle/new
+- /vehicle/edit/<id>
+- /reservations
+- /reservation/<id>
+- /reservation/new
+- /reservation/edit/<id>
+- /rentals
+- /rental/<id>
+- /rental/new
+- /rental/edit/<id>
