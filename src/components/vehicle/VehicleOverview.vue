@@ -16,20 +16,23 @@
     </b-row>
 
     <b-row>
-      <b-card-group columns>
-        <b-card 
-          v-for="v in vehicles"
+      <div 
+        v-for="v in vehicles"
+        class="vehicle-card-container col-lg-4 col-md-6 col-sm-12">
+        <b-card
           @click="viewVehicle(v.id)"
           class="vehicle-card"
           img-src="https://auto.ndtvimg.com/car-images/medium/maruti-suzuki/baleno/maruti-suzuki-baleno.jpg?v=51"
           :title="v.name"
           >
           <p>Type: {{v.type}}, Model: {{v.model}}</p>
-          <b-button :variant="'primary'" class="vehicle-item-btn" @click="editVehicle($event, v.id)">
-            <font-awesome-icon icon="edit" />
-          </b-button>
+          <div slot="footer">
+            <b-button :variant="'primary'" class="vehicle-item-btn" @click.stop="editVehicle($event, v.id)">
+              <font-awesome-icon icon="edit" />
+            </b-button>
+          </div>
         </b-card>
-      </b-card-group>
+      </div>
     </b-row>
 
   </b-container>
@@ -67,6 +70,11 @@
 </script>
 
 <style scoped lang="scss">
+.vehicle-card-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .vehicle-card {
   cursor: pointer;
   &:hover {
