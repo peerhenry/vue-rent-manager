@@ -52,14 +52,13 @@
     },
     methods: {
       createVehicle: function(event) {
-        this.$store.commit('addRandomVehicle') // DEBUG
+        this.$router.push({ name: 'vehicleNew' })
       },
       viewVehicle: function(id) {
-        console.log('Go to view vehicle, ', id)
-        this.$router.push({ name: 'vehicle', params: { id }})
+        this.$router.push({ name: 'vehicle', params: { id } })
       },
       editVehicle: function(event, id) {
-        console.log('Go to edit vehicle, ', id)
+        this.$router.push({ name: 'vehicleEdit', params: { id } })
       }
     },
     computed: {

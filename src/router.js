@@ -28,8 +28,19 @@ export default new Router({
     {
       path: '/vehicle/:id',
       name: 'vehicle',
-      // component: VehicleDetails,
       component: () => import('./components/vehicle/VehicleDetails.vue'),
+      props: true
+    },
+    {
+      path: '/vehicle/new',
+      name: 'vehicleNew',
+      component: () => import('./components/vehicle/VehicleNew.vue'),
+      props: true
+    },
+    {
+      path: '/vehicle/edit/:id',
+      name: 'vehicleEdit',
+      component: () => import('./components/vehicle/VehicleEdit.vue'),
       props: true
     },
     {

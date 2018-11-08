@@ -1,13 +1,13 @@
 <template lang="html">
   <h1>
-    Edit Vehicle
+    Edit Vehicle {{ id }}
   </h1>
 </template>
 
 <script lang="js">
   export default  {
     name: 'VehicleEdit',
-    props: [],
+    props: ['id'],
     mounted() {
 
     },
