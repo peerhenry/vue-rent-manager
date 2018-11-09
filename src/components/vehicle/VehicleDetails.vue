@@ -1,7 +1,14 @@
 <template lang="html">
-  <h1>
-    Vehicle {{ id }}
-  </h1>
+  <div>
+    <h1>
+      Vehicle {{ vehicle.id }}
+    </h1>
+    <div>
+      <h2>Name: {{ vehicle.name }}</h2>
+      <p>Model: {{ vehicle.model }}</p>
+      <p>Type: {{ vehicle.type }}</p>
+    </div>
+  </div>
 </template>
 
 <script lang="js">
@@ -9,6 +16,7 @@
     name: 'VehicleView',
     props: ['id'],
     mounted() {
+      
     },
     data() {
       return {
@@ -19,7 +27,9 @@
 
     },
     computed: {
-
+      vehicle: function() {
+        return this.$store.getters.getVehicleById(this.id)
+      }
     }
 }
 </script>

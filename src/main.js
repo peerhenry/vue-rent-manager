@@ -7,6 +7,7 @@ import router from './router.js'
 import store from './store.js'
 import setupIcons from './setupIcons.js'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import initStore from './initStore.js'
 
 setupIcons()
 
@@ -20,3 +21,5 @@ new Vue({
   store, // inject store in all children components
   render: h => h(App)
 }).$mount('#app')
+
+initStore(store)
