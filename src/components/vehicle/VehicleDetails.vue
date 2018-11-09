@@ -1,12 +1,11 @@
 <template lang="html">
   <div>
-    <h1>
-      Vehicle {{ vehicle.id }}
-    </h1>
     <div>
-      <h2>Name: {{ vehicle.name }}</h2>
+      <h2>{{ vehicle.name }}</h2>
+      <p>Brand: {{ vehicle.brand }}</p>
       <p>Model: {{ vehicle.model }}</p>
       <p>Type: {{ vehicle.type }}</p>
+      <p>Build year: {{vehicle.buildYear}}</p>
     </div>
   </div>
 </template>

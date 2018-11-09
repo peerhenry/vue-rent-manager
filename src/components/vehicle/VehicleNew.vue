@@ -56,9 +56,17 @@
       }
     },
     methods: {
-      submit(){
-        console.log('new vehicle')
-        this.$store.commit('addRandomVehicle') // DEBUG
+      createVehicle () {
+        return {
+          name: this.form.name,
+          model: this.form.model,
+          brand: this.form.brand,
+          buildYear: this.form.buildYear,
+        }
+      },
+      submit () {
+        const vehicle = this.createVehicle();
+        this.$store.commit('registerVehicle', vehicle)
         this.$router.push({ name: 'vehicles' })
       }
     },

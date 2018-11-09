@@ -25,7 +25,9 @@
           img-src="https://auto.ndtvimg.com/car-images/medium/maruti-suzuki/baleno/maruti-suzuki-baleno.jpg?v=51"
           :title="v.name"
           >
-          <p>Type: {{v.type}}, Model: {{v.model}}</p>
+          <p>Type: {{v.type}}</p>
+          <p>Brand: {{v.brand}}</p>
+          <p>Model: {{v.model}}</p>
           <div slot="footer">
             <b-button :variant="'primary'" class="vehicle-item-btn" @click.stop="editVehicle($event, v.id)">
               <font-awesome-icon icon="edit" />
